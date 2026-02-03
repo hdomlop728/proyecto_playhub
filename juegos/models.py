@@ -17,3 +17,8 @@ class Juego(models.Model):
 
     def __str__(self) -> str:
         return self.titulo
+
+    class Meta:
+        verbose_name = 'Juego'
+        verbose_name_plural = 'Juegos'
+        ordering = ['-fecha_lanzamiento']
