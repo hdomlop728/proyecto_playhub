@@ -1,0 +1,21 @@
+{% extends 'juegos/base.html' %}
+{% block titulo %}Listado de juegos{% endblock %}
+
+{% block contenidos %}
+    <h1>Listado de juegos</h1>
+    <a href="{% url 'juego_create' %}">Nuevo juego</a>
+
+    <ul>
+        {% for juego in juegos %}
+            <li>
+                {{ juego.titulo }}
+                <a href="{% url 'juego_update' juego.pk %}">Editar</a>
+                <a href="{% url 'juego_delete' juego.pk %}">Borrar</a>
+            </li>
+        {% empty %}
+            <li>No hay juegos para listar</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

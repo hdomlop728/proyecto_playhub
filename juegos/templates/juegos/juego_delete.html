@@ -1,0 +1,15 @@
+{% extends 'juegos/base.html' %}
+{% block titulo %}Borrardo de juego{% endblock %}
+
+{% block contenidos %}
+    <h1>Borrado del juego: {{ juego.titulo }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <button type="submit">Borrar</button>
+            <a href="{% url 'juego_list' %}">Cancelar</a>
+        </div>
+    </form>
+{% endblock %}
