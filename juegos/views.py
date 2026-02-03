@@ -27,3 +27,4 @@ class juego_delete(DeleteView):
     model = Juego
     template_name = 'juegos/juego_delete.html'
     success_url = reverse_lazy('juego_list')
+
